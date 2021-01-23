@@ -1,0 +1,52 @@
+<div id="search-results">
+  <p class="lead"><%= @pagy.count %> records</p>
+  <% if @pagy.count > 0 %>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead class="bg-info">
+          <tr>
+            <%= content_tag :th, class: column_css(:updated_at) do %>
+              <%= link_to "Last updated #{arrow :updated_at}", "#", class: 'text-light',
+                  data: { reflex: "click->TabularReflex#order", column_name: :updated_at, direction: direction } %>
+            <% end %>
+            <%= content_tag :th, class: column_css(:name) do %>
+              <%= link_to "Name #{arrow :name}", "#", class: 'text-light',
+                  data: { reflex: "click->TabularReflex#order", column_name: :name, direction: direction } %>
+            <% end %>
+            <%= content_tag :th, class: column_css(:email) do %>
+              <%= link_to "Email #{arrow :email}", "#", class: 'text-light',
+                  data: { reflex: "click->TabularReflex#order", column_name: :email, direction: direction } %>
+            <% end %>
+              <%= content_tag :th, class: column_css(:title) do %>
+              <%= link_to "Title #{arrow :title}", "#", class: 'text-light',
+                  data: { reflex: "click->TabularReflex#order", column_name: :title, direction: direction } %>
+            <% end %>
+                <%= content_tag :th, class: column_css(:phone) do %>
+              <%= link_to "Phone #{arrow :phone}", "#", class: 'text-light',
+                  data: { reflex: "click->TabularReflex#order", column_name: :phone, direction: direction } %>
+            <% end %>
+            <%= content_tag :th, class: column_css(:active) do %>
+              <%= link_to "Status #{arrow :active}", "#", class: 'text-light',
+                  data: { reflex: "click->TabularReflex#order", column_name: :active, direction: direction } %>
+            <% end %>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.updated_at %></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.title %></td>
+              <td><%= user.phone %></td>
+              <td><%= active_status(user) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <%= render "paginator" if @pagy.pages > 1 %>
+  <% end %>
+</div>
