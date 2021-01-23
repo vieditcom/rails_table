@@ -1,5 +1,9 @@
 @import "~bootstrap/scss/bootstrap";
 
+.lead {
+  font-size: 1.1rem;
+  padding-right: 7px ;
+}
 .active {
   font-weight: bold;
   color: green;
