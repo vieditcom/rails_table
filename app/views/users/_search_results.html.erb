@@ -31,7 +31,7 @@
               <%= button_tag "Status", type: 'button', class: "btn btn-order#{arrow :active, 'numeric-down', 'numeric-up'}",
                   data: { reflex: "click->TabularReflex#order", column_name: :active, direction: direction } %>
             <% end %>
-            <th></th>
+            <th class="edit-column"></th>
           </tr>
         </thead>
 
@@ -45,7 +45,10 @@
               <td><%= user.phone %></td>
               <td><%= active_status(user) %></td>
               <td>
-                <%= button_tag type: 'button', class: 'btn btn-danger btn-sm btn-trash', data: {action: 'tabular#destroy'} do %>
+                <%= button_tag type: 'button', class: 'btn btn-success btn-sm btn-change', data: {action: 'tabular#change'} do %>
+                  <%= image_pack_tag "media/src/img/edit-regular.svg" %>
+                <% end %>
+                <%= button_tag type: 'button', class: 'btn btn-danger btn-sm btn-change', data: {action: 'tabular#destroy'} do %>
                   <%= image_pack_tag "media/src/img/trash-alt-regular.svg" %>
                 <% end %>
               </td>

@@ -33,13 +33,16 @@ body {
 .btn-order:hover {
   color: #f8f9fa;
 }
-.btn-trash img {
+.btn-change img {
   height: 16px;
 }
 .sort-icon {
   background-size: 16px;
   background-repeat: no-repeat;
   background-position: right;
+}
+.edit-column {
+  min-width: 88px;
 }
 .alpha-down {
   background-image: url('../img/sort-alpha-down-alt-solid.svg');
