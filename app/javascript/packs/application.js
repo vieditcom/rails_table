@@ -12,5 +12,7 @@ Rails.start()
 Turbolinks.start()
 // ActiveStorage.start()
 
+require.context('../src/img', true)
+
 import "controllers"
 import "../src/css/styles.scss"

@@ -39,7 +39,7 @@ class TabularReflex < ApplicationReflex
     morph :nothing
 
     cable_ready
-      .inner_html(selector: "#search-results", html: render(partial: "tabulars/search_results", assigns: assigns))
+      .inner_html(selector: "#search-results", html: render(partial: "search_results", assigns: assigns))
       .push_state(url: uri.to_s)
       .broadcast
   end

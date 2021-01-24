@@ -1,5 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 
+body {
+  font-family: 'Titillium Web', sans-serif;
+}
 .lead {
   font-size: 1.1rem;
   padding-right: 7px ;
@@ -14,3 +17,48 @@
 //.selected {
 //  background-color: #0ca6c5 !important;
 //}
+.btn-add {
+  margin: 0 auto;
+  max-width: 265px;
+}
+.btn-order {
+  color: #f8f9fa;
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 0 17px 0 0;
+}
+.btn-order:hover {
+  color: #f8f9fa;
+}
+.btn-trash img {
+  height: 16px;
+}
+.sort-icon {
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.alpha-down {
+  background-image: url('../img/sort-alpha-down-alt-solid.svg');
+}
+.alpha-up {
+  background-image: url('../img/sort-alpha-up-solid.svg');
+}
+.numeric-down {
+  background-image: url('../img/sort-numeric-down-alt-solid.svg');
+}
+.numeric-up {
+  background-image: url('../img/sort-numeric-up-solid.svg');
+}
+.amount-down {
+  background-image: url('../img/sort-amount-down-solid.svg');
+}
+.amount-up {
+  background-image: url('../img/sort-amount-up-alt-solid.svg');
+}
+.modal-footer {
+  justify-content: space-between;
+}

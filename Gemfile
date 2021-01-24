@@ -32,6 +32,7 @@ gem 'stimulus_reflex'
 gem 'faker'
 gem 'pagy'
 gem 'valid_email'
+gem 'phonelib'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

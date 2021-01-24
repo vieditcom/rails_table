@@ -12,9 +12,9 @@ module TabularsHelper
     "selected" if column_name.to_s == @order_by
   end
 
-  def arrow(column_name)
+  def arrow(column_name, desc_class, asc_class)
     return if column_name.to_s != @order_by
-    @direction == "desc" ? "↑" : "↓"
+    @direction == "desc" ? " sort-icon #{desc_class}" : " sort-icon #{asc_class}"
   end
 
   def direction

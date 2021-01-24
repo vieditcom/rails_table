@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'tabulars#show'
+  resources :users, only: [:index, :create, :destroy]
+  root to: 'users#index'
 end

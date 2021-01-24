@@ -8,41 +8,47 @@
         <thead class="bg-info">
           <tr>
             <%= content_tag :th, class: column_css(:updated_at) do %>
-              <%= link_to "Last updated #{arrow :updated_at}", "#", class: 'text-light',
+              <%= button_tag "Last updated", type: 'button', class: "btn btn-order#{arrow :updated_at, 'amount-down', 'amount-up'}",
                   data: { reflex: "click->TabularReflex#order", column_name: :updated_at, direction: direction } %>
             <% end %>
             <%= content_tag :th, class: column_css(:name) do %>
-              <%= link_to "Name #{arrow :name}", "#", class: 'text-light',
+              <%= button_tag "Name", type: 'button', class: "btn btn-order#{arrow :name, 'alpha-down', 'alpha-up'}",
                   data: { reflex: "click->TabularReflex#order", column_name: :name, direction: direction } %>
             <% end %>
             <%= content_tag :th, class: column_css(:email) do %>
-              <%= link_to "Email #{arrow :email}", "#", class: 'text-light',
+              <%= button_tag "Email", type: 'button', class: "btn btn-order#{arrow :email, 'alpha-down', 'alpha-up'}",
                   data: { reflex: "click->TabularReflex#order", column_name: :email, direction: direction } %>
             <% end %>
               <%= content_tag :th, class: column_css(:title) do %>
-              <%= link_to "Title #{arrow :title}", "#", class: 'text-light',
+              <%= button_tag "Title", type: 'button', class: "btn btn-order#{arrow :title, 'alpha-down', 'alpha-up'}",
                   data: { reflex: "click->TabularReflex#order", column_name: :title, direction: direction } %>
             <% end %>
                 <%= content_tag :th, class: column_css(:phone) do %>
-              <%= link_to "Phone #{arrow :phone}", "#", class: 'text-light',
+              <%= button_tag "Phone", type: 'button', class: "btn btn-order#{arrow :phone, 'numeric-down', 'numeric-up'}",
                   data: { reflex: "click->TabularReflex#order", column_name: :phone, direction: direction } %>
             <% end %>
             <%= content_tag :th, class: column_css(:active) do %>
-              <%= link_to "Status #{arrow :active}", "#", class: 'text-light',
+              <%= button_tag "Status", type: 'button', class: "btn btn-order#{arrow :active, 'numeric-down', 'numeric-up'}",
                   data: { reflex: "click->TabularReflex#order", column_name: :active, direction: direction } %>
             <% end %>
+            <th></th>
           </tr>
         </thead>
 
         <tbody>
           <% @users.each do |user| %>
-            <tr>
-              <td><%= user.updated_at.to_formatted_s(:db) %></td>
+            <tr data-controller="tabular" data-tabular-id="<%= user.id %>">
+              <td><%= user.updated_at.to_formatted_s(:short) %></td>
               <td><%= user.name %></td>
               <td><%= user.email %></td>
               <td><%= user.title %></td>
               <td><%= user.phone %></td>
               <td><%= active_status(user) %></td>
+              <td>
+                <%= button_tag type: 'button', class: 'btn btn-danger btn-sm btn-trash', data: {action: 'tabular#destroy'} do %>
+                  <%= image_pack_tag "media/src/img/trash-alt-regular.svg" %>
+                <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
