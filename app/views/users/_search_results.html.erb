@@ -44,7 +44,7 @@
               <td><%= user.title %></td>
               <td><%= user.phone %></td>
               <td><%= active_status(user) %></td>
-              <td>
+              <td class="actions">
                 <%= button_tag type: 'button', class: 'btn btn-success btn-sm btn-change', data: {reflex: 'click->Modal#append_form', modal_user: user.id, bs_toggle: 'modal', bs_target: '#user-modal'} do %>
                   <%= image_pack_tag "media/src/img/edit-regular.svg" %>
                 <% end %>

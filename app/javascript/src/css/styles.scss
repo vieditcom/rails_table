@@ -14,9 +14,12 @@ body {
 .inactive {
   color: red;
 }
-//.selected {
-//  background-color: #0ca6c5 !important;
-//}
+.selected {
+  background-color: #0dbbdf !important;
+}
+.actions {
+  width: 88px;
+}
 .btn-add {
   margin: 0 auto;
   max-width: 265px;

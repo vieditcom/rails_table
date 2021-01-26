@@ -15,4 +15,5 @@ Turbolinks.start()
 require.context('../src/img', true)
 
 import "controllers"
+import '../src/js/fade'
 import "../src/css/styles.scss"
