@@ -1,0 +1,16 @@
+<div class="modal fade" id="edit-user-modal" tabindex="-1" aria-labelledby="1111111111111111111111111" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit user</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div data-reflex-root='#append-edit-form' id='append-edit-form' data-controller="validations" data-action="ajax:error->tabular#console">
+        <%= render(partial: 'edit_form', locals: {user: @user}) %>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -16,7 +16,6 @@ import { Modal } from 'bootstrap'
 export default class extends Controller {
   connect () {
     StimulusReflex.register(this)
-    const userModal = new Modal(document.getElementById('user-modal'))
   }
 
   /* Application-wide lifecycle methods

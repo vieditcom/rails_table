@@ -1,0 +1,3 @@
+<%= form_with model: user, id: 'edit-user-form', local: false, data: { action: "submit->validations#test" } do |f| %>
+  <%= render 'inner_form', user: user, f: f %>
+<% end %>

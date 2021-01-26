@@ -1,8 +1,9 @@
 <div class="container-fluid my-5">
   <div class="w-100 d-flex justify-content-end mb-3">
-    <input type="text" placeholder="Search..." class="form-control" style="max-width: 380px;" data-reflex="debounced:input->TabularReflex#search">
+    <input type="text" placeholder="Search..." class="form-control" style="max-width: 380px" data-reflex="debounced:input->TabularReflex#search">
   </div>
 
   <%= render "search_results" %>
-  <%= render "modal" %>
+  <%= render "edit_modal" %>
+  <%= render "new_modal" %>
 </div>
