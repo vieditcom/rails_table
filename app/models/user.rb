@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   validates :name, presence: true, length: {minimum: 3, maximum: 100}
-  validates :email, presence: true, email: true
-  validates :email, uniqueness: true, if: Proc.new {|email| self.email != email}
+  validates :email, presence: true, email: true, uniqueness: true
   validates :phone, phone: true, presence: true
 
   scope :search, ->(query) {

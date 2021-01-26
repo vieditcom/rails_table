@@ -4,6 +4,12 @@
   </div>
 
   <%= render "search_results" %>
+
+  <div class="row">
+    <%= button_tag type: 'button', class: 'btn btn-primary btn-add', data: {reflex: 'click->Modal#append_form', bs_toggle: 'modal', bs_target: '#user-modal'} do %>
+      Add user
+    <% end %>
+  </div>
+
   <%= render "edit_modal" %>
-  <%= render "new_modal" %>
 </div>

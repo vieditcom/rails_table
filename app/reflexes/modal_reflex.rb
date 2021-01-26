@@ -2,8 +2,8 @@
 
 class ModalReflex < ApplicationReflex
 
-  def append_edit_form
-    user = User.find(element.dataset['modal-user'])
+  def append_form
+    user = User.find_by_id(element.dataset['modal-user']) || User.new
     morph '#append-edit-form', render(partial: 'users/edit_form', locals: {user: user})
   end
 

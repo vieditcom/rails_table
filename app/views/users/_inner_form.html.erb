@@ -3,14 +3,14 @@
   <div class="mb-3 <%= validation_status user, :name %>">
     <%= f.label :name, "Name*", class: 'form-label' %>
     <%= f.text_field :name, class: "form-control",
-        data: { reflex: "debounced:input", modal_user: user.id, reflex_permanent: true } %>
+        data: { reflex: "debounced:input->Validations#validate", reflex_dataset: 'combined', modal_user: user.id, reflex_permanent: true } %>
     <%= validation_message user, :name %>
   </div>
 
   <div class="mb-3 <%= validation_status user, :email %>">
     <%= f.label :email, "Email*", class: 'form-label' %>
     <%= f.email_field :email, class: "form-control",
-        data: { reflex: "debounced:input", reflex_permanent: true } %>
+        data: { reflex: "debounced:input->Validations#validate", reflex_dataset: 'combined', reflex_permanent: true } %>
     <%= validation_message user, :email %>
   </div>
 
@@ -23,7 +23,7 @@
   <div class="mb-3 <%= validation_status user, :phone %>">
     <%= f.label :phone, 'Phone*', class: 'form-label' %>
     <%= f.text_field :phone, class: "form-control",
-        data: { reflex: "debounced:input", reflex_permanent: true } %>
+        data: { reflex: "debounced:input->Validations#validate", reflex_dataset: 'combined', reflex_permanent: true } %>
     <%= validation_message user, :phone %>
   </div>
 
