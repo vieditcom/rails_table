@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   include Tabular
+  before_action :set_user, only: [:update, :destroy]
 
   def index
     prepare_variables
@@ -20,8 +21,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { head :ok }
+        format.json { head :ok }
+      else
+        format.html { render :edit }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def destroy
-    if User.find(params[:id]).destroy
+    if @user.destroy
       head :no_content
     else
       head :unprocessable_entity
@@ -31,6 +44,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     return {} unless params.key?(:user)
