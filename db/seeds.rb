@@ -6,13 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Faker::Config.locale = 'en-US'
+
 User.destroy_all
 1000.times do
   User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.unique.email,
     title: (Faker::Name.prefix if Faker::Boolean.boolean(true_ratio: 0.8)),
-    phone: Faker::PhoneNumber.cell_phone_with_country_code,
+    phone: Faker::PhoneNumber.cell_phone_in_e164,
     active: Faker::Boolean.boolean
   )
 end
