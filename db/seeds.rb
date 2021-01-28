@@ -13,7 +13,7 @@ User.destroy_all
   User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.unique.email,
-    title: (Faker::Name.prefix if Faker::Boolean.boolean(true_ratio: 0.8)),
+    title: (Faker::Job.title if Faker::Boolean.boolean(true_ratio: 0.8)),
     phone: Faker::PhoneNumber.cell_phone_in_e164,
     active: Faker::Boolean.boolean
   )
